@@ -236,6 +236,7 @@ vendor/lib64/libvdis.uniplugin@1.0.so
 
 # Display
 vendor/firmware/ss_dsi_panel_PBA_BOOTING_FHD_DSI1.dat
+vendor/etc/input-port-associations.xml
 
 # Display calibration data
 vendor/etc/display/qdcm_calib_data_B5_S6E3FAC_AMF670BS03.json
