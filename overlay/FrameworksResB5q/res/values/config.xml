@@ -1,47 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2024 The LineageOS Project
+     Copyright (C) 2023 The LineageOS Project
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- The bounding path of the cutout region of the main built-in display.
-         Must either be empty if there is no cutout region, or a string that is parsable by
-         {@link android.util.PathParser}.
+    <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
+         the framework from using higher refresh rates, even if display modes with higher refresh
+         rates are available from hardware composer. Only has an effect if the value is
+         non-zero. -->
+    <integer name="config_defaultPeakRefreshRate">120</integer>
 
-         The path is assumed to be specified in display coordinates with pixel units and in
-         the display's native orientation, with the origin of the coordinate system at the
-         center top of the display. Optionally, you can append either `@left` or `@right` to the
-         end of the path string, in order to change the path origin to either the top left,
-         or top right of the display.
+    <!-- Whether to show Fold lock behavior setting feature in Settings App -->
+    <bool name="config_fold_lock_behavior">true</bool>
 
-         To facilitate writing device-independent emulation overlays, the marker `@dp` can be
-         appended after the path string to interpret coordinates in dp instead of px units.
-         Note that a physical cutout should be configured in pixels for the best results.
+    <!-- Type of the ambient tap sensor per device posture (defined by WM Jetpack posture).
+        Unspecified values use config_dozeTapSensor -->
+    <string-array name="config_dozeTapSensorPostureMapping" translatable="false">
+        <item></item> <!-- UNKNOWN, don't register for touch if we don't know -->
+        <item>com.google.sensor.single_touch</item> <!-- CLOSED -->
+        <item>com.google.sensor.touch_gesture</item> <!-- HALF_OPENED -->
+        <item>com.google.sensor.touch_gesture</item> <!-- OPENED -->
+      </string-array>
 
-         If the display supports multiple resolutions, please define the path config based on the
-         highest resolution so that it can be scaled correctly in each resolution.
-
-         Example for a 10px x 10px square top-center cutout:
-                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z</string>
-         Example for a 10dp x 10dp square top-center cutout:
-                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
-
-         @see https://www.w3.org/TR/SVG/paths.html#PathData
-         -->
-    <string name="config_mainBuiltInDisplayCutout" translatable="false">M 0,0 H -9.333333333333333‬ V 27 H 9.333333333333333‬ V 0 H 0 Z @dp</string>
-
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingMinimumFloat instead -->
-    <integer name="config_screenBrightnessSettingMinimum">0</integer>
-
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingMaximumFloat instead -->
-    <integer name="config_screenBrightnessSettingMaximum">255</integer>
-
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingDefaultFloat instead -->
-    <integer name="config_screenBrightnessSettingDefault">128</integer>
+    <!-- The display cutout configs for secondary built-in display. -->
+    <string name="config_secondaryBuiltInDisplayCutout" translatable="false">M 0,0 H -11.23809523809524 V 32.38095238095238 H 11.23809523809524 V 0 H 0 Z @dp</string>
 
     <!-- Minimum screen brightness setting allowed by power manager.
          -2 is invalid so setting will resort to int value specified above.
@@ -63,8 +46,8 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">13</integer>
-    <item name="config_screenBrightnessDimFloat" type="dimen">0.050980393</item>
+    <integer name="config_screenBrightnessDim">12</integer>
+    <item name="config_screenBrightnessDimFloat" type="dimen">0.047058824</item>
 
     <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
@@ -107,10 +90,9 @@
         <item>5000</item>
         <item>6000</item>
         <item>7000</item>
-        <item>10000</item>
+        <item>8000</item>
         <item>20000</item>
         <item>50000</item>
-        <item>999999</item>
     </integer-array>
 
     <!-- Array of desired screen brightness in nits corresponding to the lux values
@@ -140,17 +122,16 @@
         <item>99</item>
         <item>111</item>
         <item>130</item>
-        <item>190</item>
+        <item>200</item>
         <item>340</item>
         <item>500</item>
-        <item>650</item>
         <item>800</item>
         <item>1000</item>
-        <item>1100</item>
         <item>1200</item>
-        <item>1200</item>
-        <item>1200</item>
-        <item>1200</item>
+        <item>1400</item>
+        <item>1500</item>
+        <item>1500</item>
+        <item>1500</item>
     </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
@@ -771,6 +752,159 @@
         <item>610</item>
         <item>611</item>
         <item>612</item>
+        <item>613</item>
+        <item>614</item>
+        <item>615</item>
+        <item>616</item>
+        <item>617</item>
+        <item>618</item>
+        <item>619</item>
+        <item>620</item>
+        <item>621</item>
+        <item>622</item>
+        <item>623</item>
+        <item>624</item>
+        <item>625</item>
+        <item>626</item>
+        <item>627</item>
+        <item>628</item>
+        <item>629</item>
+        <item>630</item>
+        <item>631</item>
+        <item>632</item>
+        <item>633</item>
+        <item>634</item>
+        <item>635</item>
+        <item>636</item>
+        <item>637</item>
+        <item>638</item>
+        <item>639</item>
+        <item>640</item>
+        <item>641</item>
+        <item>642</item>
+        <item>643</item>
+        <item>644</item>
+        <item>645</item>
+        <item>646</item>
+        <item>647</item>
+        <item>648</item>
+        <item>649</item>
+        <item>650</item>
+        <item>651</item>
+        <item>652</item>
+        <item>653</item>
+        <item>654</item>
+        <item>655</item>
+        <item>656</item>
+        <item>657</item>
+        <item>658</item>
+        <item>659</item>
+        <item>660</item>
+        <item>661</item>
+        <item>662</item>
+        <item>663</item>
+        <item>664</item>
+        <item>665</item>
+        <item>666</item>
+        <item>667</item>
+        <item>668</item>
+        <item>669</item>
+        <item>670</item>
+        <item>671</item>
+        <item>672</item>
+        <item>673</item>
+        <item>674</item>
+        <item>675</item>
+        <item>676</item>
+        <item>677</item>
+        <item>678</item>
+        <item>679</item>
+        <item>680</item>
+        <item>681</item>
+        <item>682</item>
+        <item>683</item>
+        <item>684</item>
+        <item>685</item>
+        <item>686</item>
+        <item>687</item>
+        <item>688</item>
+        <item>689</item>
+        <item>690</item>
+        <item>691</item>
+        <item>692</item>
+        <item>693</item>
+        <item>694</item>
+        <item>695</item>
+        <item>696</item>
+        <item>697</item>
+        <item>698</item>
+        <item>699</item>
+        <item>700</item>
+        <item>701</item>
+        <item>702</item>
+        <item>703</item>
+        <item>704</item>
+        <item>705</item>
+        <item>706</item>
+        <item>707</item>
+        <item>708</item>
+        <item>709</item>
+        <item>710</item>
+        <item>711</item>
+        <item>712</item>
+        <item>713</item>
+        <item>714</item>
+        <item>715</item>
+        <item>716</item>
+        <item>717</item>
+        <item>718</item>
+        <item>719</item>
+        <item>720</item>
+        <item>721</item>
+        <item>722</item>
+        <item>723</item>
+        <item>724</item>
+        <item>725</item>
+        <item>726</item>
+        <item>727</item>
+        <item>728</item>
+        <item>729</item>
+        <item>730</item>
+        <item>731</item>
+        <item>732</item>
+        <item>733</item>
+        <item>734</item>
+        <item>735</item>
+        <item>736</item>
+        <item>737</item>
+        <item>738</item>
+        <item>739</item>
+        <item>740</item>
+        <item>741</item>
+        <item>742</item>
+        <item>743</item>
+        <item>744</item>
+        <item>745</item>
+        <item>746</item>
+        <item>747</item>
+        <item>748</item>
+        <item>749</item>
+        <item>750</item>
+        <item>751</item>
+        <item>752</item>
+        <item>753</item>
+        <item>754</item>
+        <item>755</item>
+        <item>756</item>
+        <item>757</item>
+        <item>758</item>
+        <item>759</item>
+        <item>760</item>
+        <item>761</item>
+        <item>762</item>
+        <item>763</item>
+        <item>764</item>
+        <item>765</item>
     </integer-array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
@@ -782,629 +916,866 @@
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
         <item>1</item>
-        <item>1.371</item>
-        <item>1.914</item>
-        <item>2.548</item>
+        <item>1.37</item>
+        <item>1.91</item>
+        <item>2.55</item>
         <item>3.25</item>
-        <item>4.008</item>
-        <item>4.812</item>
-        <item>5.658</item>
-        <item>6.541</item>
-        <item>7.458</item>
-        <item>8.406</item>
-        <item>9.383</item>
-        <item>10.387</item>
-        <item>11.417</item>
+        <item>4.01</item>
+        <item>4.81</item>
+        <item>5.66</item>
+        <item>6.54</item>
+        <item>7.46</item>
+        <item>8.41</item>
+        <item>9.38</item>
+        <item>10.39</item>
+        <item>11.42</item>
         <item>12.47</item>
-        <item>13.546</item>
-        <item>14.644</item>
-        <item>15.763</item>
-        <item>16.902</item>
+        <item>13.55</item>
+        <item>14.64</item>
+        <item>15.76</item>
+        <item>16.9</item>
         <item>18.06</item>
-        <item>19.236</item>
+        <item>19.24</item>
         <item>20.43</item>
-        <item>21.642</item>
+        <item>21.64</item>
         <item>22.87</item>
-        <item>24.114</item>
-        <item>25.374</item>
-        <item>26.649</item>
-        <item>27.938</item>
-        <item>29.243</item>
-        <item>30.561</item>
-        <item>31.893</item>
-        <item>33.238</item>
-        <item>34.596</item>
-        <item>35.968</item>
-        <item>37.351</item>
-        <item>38.747</item>
-        <item>40.155</item>
-        <item>41.575</item>
-        <item>43.007</item>
-        <item>44.449</item>
-        <item>45.903</item>
-        <item>47.368</item>
-        <item>48.843</item>
+        <item>24.11</item>
+        <item>25.37</item>
+        <item>26.65</item>
+        <item>27.94</item>
+        <item>29.24</item>
+        <item>30.56</item>
+        <item>31.89</item>
+        <item>33.24</item>
+        <item>34.6</item>
+        <item>35.97</item>
+        <item>37.35</item>
+        <item>38.75</item>
+        <item>40.16</item>
+        <item>41.58</item>
+        <item>43.01</item>
+        <item>44.45</item>
+        <item>45.9</item>
+        <item>47.37</item>
+        <item>48.84</item>
         <item>50.33</item>
-        <item>51.826</item>
-        <item>53.333</item>
+        <item>51.83</item>
+        <item>53.33</item>
         <item>54.85</item>
-        <item>56.377</item>
-        <item>57.913</item>
-        <item>59.459</item>
-        <item>61.015</item>
+        <item>56.38</item>
+        <item>57.91</item>
+        <item>59.46</item>
+        <item>61.01</item>
         <item>62.58</item>
-        <item>64.154</item>
-        <item>65.738</item>
+        <item>64.15</item>
+        <item>65.74</item>
         <item>67.33</item>
-        <item>68.931</item>
-        <item>70.541</item>
+        <item>68.93</item>
+        <item>70.54</item>
         <item>72.16</item>
-        <item>73.787</item>
-        <item>75.423</item>
-        <item>77.067</item>
-        <item>78.719</item>
-        <item>80.379</item>
-        <item>82.048</item>
-        <item>83.724</item>
-        <item>85.408</item>
+        <item>73.79</item>
+        <item>75.42</item>
+        <item>77.07</item>
+        <item>78.72</item>
+        <item>80.38</item>
+        <item>82.05</item>
+        <item>83.72</item>
+        <item>85.41</item>
         <item>87.1</item>
         <item>88.8</item>
-        <item>90.508</item>
-        <item>92.223</item>
-        <item>93.945</item>
-        <item>95.675</item>
-        <item>97.412</item>
-        <item>99.156</item>
-        <item>100.908</item>
-        <item>102.667</item>
-        <item>104.432</item>
-        <item>106.205</item>
-        <item>107.985</item>
-        <item>109.771</item>
-        <item>111.564</item>
-        <item>113.364</item>
-        <item>115.171</item>
-        <item>116.984</item>
-        <item>118.804</item>
-        <item>120.631</item>
-        <item>122.464</item>
-        <item>124.303</item>
-        <item>126.149</item>
+        <item>90.51</item>
+        <item>92.22</item>
+        <item>93.94</item>
+        <item>95.67</item>
+        <item>97.41</item>
+        <item>99.16</item>
+        <item>100.91</item>
+        <item>102.67</item>
+        <item>104.43</item>
+        <item>106.2</item>
+        <item>107.98</item>
+        <item>109.77</item>
+        <item>111.56</item>
+        <item>113.36</item>
+        <item>115.17</item>
+        <item>116.98</item>
+        <item>118.8</item>
+        <item>120.63</item>
+        <item>122.46</item>
+        <item>124.3</item>
+        <item>126.15</item>
         <item>128</item>
-        <item>129.859</item>
-        <item>131.723</item>
-        <item>133.594</item>
+        <item>129.86</item>
+        <item>131.72</item>
+        <item>133.59</item>
         <item>135.47</item>
-        <item>137.353</item>
-        <item>139.242</item>
-        <item>141.136</item>
-        <item>143.037</item>
-        <item>144.944</item>
-        <item>146.856</item>
-        <item>148.774</item>
-        <item>150.698</item>
-        <item>152.628</item>
-        <item>154.563</item>
-        <item>156.504</item>
-        <item>158.451</item>
-        <item>160.403</item>
+        <item>137.35</item>
+        <item>139.24</item>
+        <item>141.14</item>
+        <item>143.04</item>
+        <item>144.94</item>
+        <item>146.86</item>
+        <item>148.77</item>
+        <item>150.7</item>
+        <item>152.63</item>
+        <item>154.56</item>
+        <item>156.5</item>
+        <item>158.45</item>
+        <item>160.4</item>
         <item>162.36</item>
-        <item>164.324</item>
-        <item>166.292</item>
-        <item>168.266</item>
-        <item>170.246</item>
-        <item>172.231</item>
-        <item>174.221</item>
-        <item>176.216</item>
-        <item>178.217</item>
-        <item>180.223</item>
-        <item>182.234</item>
+        <item>164.32</item>
+        <item>166.29</item>
+        <item>168.27</item>
+        <item>170.25</item>
+        <item>172.23</item>
+        <item>174.22</item>
+        <item>176.22</item>
+        <item>178.22</item>
+        <item>180.22</item>
+        <item>182.23</item>
         <item>184.25</item>
-        <item>186.272</item>
-        <item>188.298</item>
+        <item>186.27</item>
+        <item>188.3</item>
         <item>190.33</item>
-        <item>192.367</item>
-        <item>194.408</item>
-        <item>196.455</item>
-        <item>198.506</item>
-        <item>200.563</item>
-        <item>202.624</item>
-        <item>204.691</item>
-        <item>206.762</item>
-        <item>208.838</item>
-        <item>210.919</item>
-        <item>213.004</item>
-        <item>215.094</item>
-        <item>217.189</item>
-        <item>219.289</item>
-        <item>221.394</item>
-        <item>223.503</item>
-        <item>225.616</item>
-        <item>227.734</item>
-        <item>229.857</item>
-        <item>231.985</item>
-        <item>234.117</item>
-        <item>236.253</item>
-        <item>238.394</item>
-        <item>240.539</item>
-        <item>242.689</item>
-        <item>244.843</item>
-        <item>247.002</item>
-        <item>249.165</item>
-        <item>251.332</item>
-        <item>253.504</item>
+        <item>192.37</item>
+        <item>194.41</item>
+        <item>196.45</item>
+        <item>198.51</item>
+        <item>200.56</item>
+        <item>202.62</item>
+        <item>204.69</item>
+        <item>206.76</item>
+        <item>208.84</item>
+        <item>210.92</item>
+        <item>213</item>
+        <item>215.09</item>
+        <item>217.19</item>
+        <item>219.29</item>
+        <item>221.39</item>
+        <item>223.5</item>
+        <item>225.62</item>
+        <item>227.73</item>
+        <item>229.86</item>
+        <item>231.98</item>
+        <item>234.12</item>
+        <item>236.25</item>
+        <item>238.39</item>
+        <item>240.54</item>
+        <item>242.69</item>
+        <item>244.84</item>
+        <item>247</item>
+        <item>249.16</item>
+        <item>251.33</item>
+        <item>253.5</item>
         <item>255.68</item>
         <item>257.86</item>
-        <item>260.045</item>
-        <item>262.234</item>
-        <item>264.427</item>
-        <item>266.624</item>
-        <item>268.826</item>
-        <item>271.032</item>
-        <item>273.241</item>
-        <item>275.456</item>
-        <item>277.674</item>
-        <item>279.896</item>
-        <item>282.122</item>
-        <item>284.353</item>
-        <item>286.587</item>
-        <item>288.826</item>
-        <item>291.068</item>
-        <item>293.315</item>
-        <item>295.566</item>
+        <item>260.05</item>
+        <item>262.23</item>
+        <item>264.43</item>
+        <item>266.62</item>
+        <item>268.83</item>
+        <item>271.03</item>
+        <item>273.24</item>
+        <item>275.46</item>
+        <item>277.67</item>
+        <item>279.9</item>
+        <item>282.12</item>
+        <item>284.35</item>
+        <item>286.59</item>
+        <item>288.83</item>
+        <item>291.07</item>
+        <item>293.31</item>
+        <item>295.57</item>
         <item>297.82</item>
-        <item>300.079</item>
-        <item>302.341</item>
-        <item>304.607</item>
-        <item>306.878</item>
-        <item>309.152</item>
+        <item>300.08</item>
+        <item>302.34</item>
+        <item>304.61</item>
+        <item>306.88</item>
+        <item>309.15</item>
         <item>311.43</item>
-        <item>313.712</item>
-        <item>315.998</item>
-        <item>318.287</item>
-        <item>320.581</item>
-        <item>322.878</item>
-        <item>325.179</item>
-        <item>327.484</item>
-        <item>329.792</item>
-        <item>332.105</item>
-        <item>334.421</item>
+        <item>313.71</item>
+        <item>316</item>
+        <item>318.29</item>
+        <item>320.58</item>
+        <item>322.88</item>
+        <item>325.18</item>
+        <item>327.48</item>
+        <item>329.79</item>
+        <item>332.1</item>
+        <item>334.42</item>
         <item>336.74</item>
-        <item>339.064</item>
-        <item>341.391</item>
-        <item>343.722</item>
-        <item>346.056</item>
-        <item>348.394</item>
-        <item>350.736</item>
-        <item>353.082</item>
-        <item>355.431</item>
-        <item>357.783</item>
-        <item>360.139</item>
-        <item>362.499</item>
-        <item>364.863</item>
-        <item>367.229</item>
+        <item>339.06</item>
+        <item>341.39</item>
+        <item>343.72</item>
+        <item>346.06</item>
+        <item>348.39</item>
+        <item>350.74</item>
+        <item>353.08</item>
+        <item>355.43</item>
+        <item>357.78</item>
+        <item>360.14</item>
+        <item>362.5</item>
+        <item>364.86</item>
+        <item>367.23</item>
         <item>369.6</item>
-        <item>371.974</item>
-        <item>374.351</item>
-        <item>376.732</item>
-        <item>379.117</item>
-        <item>381.504</item>
-        <item>383.896</item>
-        <item>386.291</item>
-        <item>388.689</item>
-        <item>391.091</item>
-        <item>393.496</item>
-        <item>395.904</item>
-        <item>398.316</item>
-        <item>400.731</item>
+        <item>371.97</item>
+        <item>374.35</item>
+        <item>376.73</item>
+        <item>379.12</item>
+        <item>381.5</item>
+        <item>383.9</item>
+        <item>386.29</item>
+        <item>388.69</item>
+        <item>391.09</item>
+        <item>393.5</item>
+        <item>395.9</item>
+        <item>398.32</item>
+        <item>400.73</item>
         <item>403.15</item>
-        <item>405.572</item>
-        <item>407.998</item>
-        <item>410.426</item>
-        <item>412.858</item>
-        <item>415.294</item>
-        <item>417.732</item>
-        <item>420.174</item>
+        <item>405.57</item>
+        <item>408</item>
+        <item>410.43</item>
+        <item>412.86</item>
+        <item>415.29</item>
+        <item>417.73</item>
+        <item>420.17</item>
         <item>422.62</item>
-        <item>425.068</item>
+        <item>425.07</item>
         <item>427.52</item>
-        <item>429.975</item>
-        <item>432.433</item>
-        <item>434.895</item>
+        <item>429.97</item>
+        <item>432.43</item>
+        <item>434.89</item>
         <item>437.36</item>
-        <item>439.828</item>
-        <item>442.299</item>
-        <item>444.773</item>
-        <item>447.251</item>
-        <item>449.731</item>
-        <item>452.215</item>
-        <item>454.702</item>
-        <item>457.193</item>
-        <item>459.686</item>
-        <item>462.183</item>
-        <item>464.682</item>
-        <item>467.185</item>
-        <item>469.691</item>
+        <item>439.83</item>
+        <item>442.3</item>
+        <item>444.77</item>
+        <item>447.25</item>
+        <item>449.73</item>
+        <item>452.22</item>
+        <item>454.7</item>
+        <item>457.19</item>
+        <item>459.69</item>
+        <item>462.18</item>
+        <item>464.68</item>
+        <item>467.18</item>
+        <item>469.69</item>
         <item>472.2</item>
-        <item>474.712</item>
-        <item>477.227</item>
-        <item>479.745</item>
-        <item>482.266</item>
-        <item>484.791</item>
-        <item>487.318</item>
-        <item>489.848</item>
-        <item>492.382</item>
-        <item>494.918</item>
-        <item>497.458</item>
+        <item>474.71</item>
+        <item>477.23</item>
+        <item>479.75</item>
+        <item>482.27</item>
+        <item>484.79</item>
+        <item>487.32</item>
+        <item>489.85</item>
+        <item>492.38</item>
+        <item>494.92</item>
+        <item>497.46</item>
         <item>500</item>
-        <item>501.961</item>
-        <item>503.922</item>
-        <item>505.882</item>
-        <item>507.843</item>
-        <item>509.804</item>
-        <item>511.765</item>
-        <item>513.725</item>
-        <item>515.686</item>
-        <item>517.647</item>
-        <item>519.608</item>
-        <item>521.569</item>
-        <item>523.529</item>
-        <item>525.49</item>
-        <item>527.451</item>
-        <item>529.412</item>
-        <item>531.373</item>
-        <item>533.333</item>
-        <item>535.294</item>
-        <item>537.255</item>
-        <item>539.216</item>
-        <item>541.176</item>
-        <item>543.137</item>
-        <item>545.098</item>
-        <item>547.059</item>
-        <item>549.02</item>
-        <item>550.98</item>
-        <item>552.941</item>
-        <item>554.902</item>
-        <item>556.863</item>
-        <item>558.824</item>
-        <item>560.784</item>
-        <item>562.745</item>
-        <item>564.706</item>
-        <item>566.667</item>
-        <item>568.627</item>
-        <item>570.588</item>
-        <item>572.549</item>
-        <item>574.51</item>
-        <item>576.471</item>
-        <item>578.431</item>
-        <item>580.392</item>
-        <item>582.353</item>
-        <item>584.314</item>
-        <item>586.275</item>
-        <item>588.235</item>
-        <item>590.196</item>
-        <item>592.157</item>
-        <item>594.118</item>
-        <item>596.078</item>
-        <item>598.039</item>
+        <item>502</item>
+        <item>504</item>
+        <item>506</item>
+        <item>508</item>
+        <item>510</item>
+        <item>512</item>
+        <item>514</item>
+        <item>516</item>
+        <item>518</item>
+        <item>520</item>
+        <item>521</item>
+        <item>523</item>
+        <item>525</item>
+        <item>527</item>
+        <item>529</item>
+        <item>531</item>
+        <item>533</item>
+        <item>535</item>
+        <item>537</item>
+        <item>539</item>
+        <item>541</item>
+        <item>543</item>
+        <item>545</item>
+        <item>547</item>
+        <item>549</item>
+        <item>551</item>
+        <item>553</item>
+        <item>555</item>
+        <item>557</item>
+        <item>559</item>
+        <item>561</item>
+        <item>563</item>
+        <item>565</item>
+        <item>567</item>
+        <item>569</item>
+        <item>571</item>
+        <item>573</item>
+        <item>574</item>
+        <item>576</item>
+        <item>578</item>
+        <item>580</item>
+        <item>582</item>
+        <item>584</item>
+        <item>586</item>
+        <item>588</item>
+        <item>590</item>
+        <item>592</item>
+        <item>594</item>
+        <item>596</item>
+        <item>598</item>
         <item>600</item>
-        <item>601.961</item>
-        <item>603.922</item>
-        <item>605.882</item>
-        <item>607.843</item>
-        <item>609.804</item>
-        <item>611.765</item>
-        <item>613.725</item>
-        <item>615.686</item>
-        <item>617.647</item>
-        <item>619.608</item>
-        <item>621.569</item>
-        <item>623.529</item>
-        <item>625.49</item>
-        <item>627.451</item>
-        <item>629.412</item>
-        <item>631.373</item>
-        <item>633.333</item>
-        <item>635.294</item>
-        <item>637.255</item>
-        <item>639.216</item>
-        <item>641.176</item>
-        <item>643.137</item>
-        <item>645.098</item>
-        <item>647.059</item>
-        <item>649.02</item>
-        <item>650.98</item>
-        <item>652.941</item>
-        <item>654.902</item>
-        <item>656.863</item>
-        <item>658.824</item>
-        <item>660.784</item>
-        <item>662.745</item>
-        <item>664.706</item>
-        <item>666.667</item>
-        <item>668.627</item>
-        <item>670.588</item>
-        <item>672.549</item>
-        <item>674.51</item>
-        <item>676.471</item>
-        <item>678.431</item>
-        <item>680.392</item>
-        <item>682.353</item>
-        <item>684.314</item>
-        <item>686.275</item>
-        <item>688.235</item>
-        <item>690.196</item>
-        <item>692.157</item>
-        <item>694.118</item>
-        <item>696.078</item>
-        <item>698.039</item>
+        <item>602</item>
+        <item>604</item>
+        <item>606</item>
+        <item>608</item>
+        <item>610</item>
+        <item>612</item>
+        <item>614</item>
+        <item>616</item>
+        <item>618</item>
+        <item>620</item>
+        <item>622</item>
+        <item>624</item>
+        <item>626</item>
+        <item>628</item>
+        <item>629</item>
+        <item>631</item>
+        <item>633</item>
+        <item>635</item>
+        <item>637</item>
+        <item>639</item>
+        <item>641</item>
+        <item>643</item>
+        <item>645</item>
+        <item>647</item>
+        <item>649</item>
+        <item>651</item>
+        <item>653</item>
+        <item>655</item>
+        <item>657</item>
+        <item>659</item>
+        <item>661</item>
+        <item>663</item>
+        <item>665</item>
+        <item>667</item>
+        <item>669</item>
+        <item>670</item>
+        <item>672</item>
+        <item>674</item>
+        <item>676</item>
+        <item>678</item>
+        <item>681</item>
+        <item>682</item>
+        <item>684</item>
+        <item>686</item>
+        <item>688</item>
+        <item>690</item>
+        <item>692</item>
+        <item>694</item>
+        <item>696</item>
+        <item>698</item>
         <item>700</item>
-        <item>701.961</item>
-        <item>703.922</item>
-        <item>705.882</item>
-        <item>707.843</item>
-        <item>709.804</item>
-        <item>711.765</item>
-        <item>713.725</item>
-        <item>715.686</item>
-        <item>717.647</item>
-        <item>719.608</item>
-        <item>721.569</item>
-        <item>723.529</item>
-        <item>725.49</item>
-        <item>727.451</item>
-        <item>729.412</item>
-        <item>731.373</item>
-        <item>733.333</item>
-        <item>735.294</item>
-        <item>737.255</item>
-        <item>739.216</item>
-        <item>741.176</item>
-        <item>743.137</item>
-        <item>745.098</item>
-        <item>747.059</item>
-        <item>749.02</item>
-        <item>750.98</item>
-        <item>752.941</item>
-        <item>754.902</item>
-        <item>756.863</item>
-        <item>758.824</item>
-        <item>760.784</item>
-        <item>762.745</item>
-        <item>764.706</item>
-        <item>766.667</item>
-        <item>768.627</item>
-        <item>770.588</item>
-        <item>772.549</item>
-        <item>774.51</item>
-        <item>776.471</item>
-        <item>778.431</item>
-        <item>780.392</item>
-        <item>782.353</item>
-        <item>784.314</item>
-        <item>786.275</item>
-        <item>788.235</item>
-        <item>790.196</item>
-        <item>792.157</item>
-        <item>794.118</item>
-        <item>796.078</item>
-        <item>798.039</item>
+        <item>702</item>
+        <item>704</item>
+        <item>706</item>
+        <item>708</item>
+        <item>710</item>
+        <item>712</item>
+        <item>714</item>
+        <item>716</item>
+        <item>718</item>
+        <item>720</item>
+        <item>722</item>
+        <item>723</item>
+        <item>725</item>
+        <item>727</item>
+        <item>729</item>
+        <item>731</item>
+        <item>733</item>
+        <item>735</item>
+        <item>737</item>
+        <item>739</item>
+        <item>741</item>
+        <item>743</item>
+        <item>745</item>
+        <item>747</item>
+        <item>749</item>
+        <item>751</item>
+        <item>753</item>
+        <item>755</item>
+        <item>757</item>
+        <item>759</item>
+        <item>761</item>
+        <item>763</item>
+        <item>765</item>
+        <item>767</item>
+        <item>769</item>
+        <item>771</item>
+        <item>773</item>
+        <item>775</item>
+        <item>777</item>
+        <item>778</item>
+        <item>780</item>
+        <item>782</item>
+        <item>784</item>
+        <item>786</item>
+        <item>788</item>
+        <item>790</item>
+        <item>792</item>
+        <item>794</item>
+        <item>796</item>
+        <item>798</item>
         <item>800</item>
-        <item>801.961</item>
-        <item>803.922</item>
-        <item>805.882</item>
-        <item>807.843</item>
-        <item>809.804</item>
-        <item>811.765</item>
-        <item>813.725</item>
-        <item>815.686</item>
-        <item>817.647</item>
-        <item>819.608</item>
-        <item>821.569</item>
-        <item>823.529</item>
-        <item>825.49</item>
-        <item>827.451</item>
-        <item>829.412</item>
-        <item>831.373</item>
-        <item>833.333</item>
-        <item>835.294</item>
-        <item>837.255</item>
-        <item>839.216</item>
-        <item>841.176</item>
-        <item>843.137</item>
-        <item>845.098</item>
-        <item>847.059</item>
-        <item>849.02</item>
-        <item>850.98</item>
-        <item>852.941</item>
-        <item>854.902</item>
-        <item>856.863</item>
-        <item>858.824</item>
-        <item>860.784</item>
-        <item>862.745</item>
-        <item>864.706</item>
-        <item>866.667</item>
-        <item>868.627</item>
-        <item>870.588</item>
-        <item>872.549</item>
-        <item>874.51</item>
-        <item>876.471</item>
-        <item>878.431</item>
-        <item>880.392</item>
-        <item>882.353</item>
-        <item>884.314</item>
-        <item>886.275</item>
-        <item>888.235</item>
-        <item>890.196</item>
-        <item>892.157</item>
-        <item>894.118</item>
-        <item>896.078</item>
-        <item>898.039</item>
+        <item>802</item>
+        <item>804</item>
+        <item>806</item>
+        <item>808</item>
+        <item>810</item>
+        <item>812</item>
+        <item>814</item>
+        <item>816</item>
+        <item>818</item>
+        <item>819</item>
+        <item>821</item>
+        <item>824</item>
+        <item>826</item>
+        <item>828</item>
+        <item>830</item>
+        <item>831</item>
+        <item>833</item>
+        <item>835</item>
+        <item>837</item>
+        <item>839</item>
+        <item>841</item>
+        <item>843</item>
+        <item>845</item>
+        <item>847</item>
+        <item>849</item>
+        <item>851</item>
+        <item>853</item>
+        <item>855</item>
+        <item>857</item>
+        <item>859</item>
+        <item>861</item>
+        <item>863</item>
+        <item>865</item>
+        <item>867</item>
+        <item>869</item>
+        <item>871</item>
+        <item>872</item>
+        <item>874</item>
+        <item>876</item>
+        <item>878</item>
+        <item>880</item>
+        <item>882</item>
+        <item>884</item>
+        <item>886</item>
+        <item>888</item>
+        <item>890</item>
+        <item>892</item>
+        <item>894</item>
+        <item>896</item>
+        <item>898</item>
         <item>900</item>
-        <item>901.961</item>
-        <item>903.922</item>
-        <item>905.882</item>
-        <item>907.843</item>
-        <item>909.804</item>
-        <item>911.765</item>
-        <item>913.725</item>
-        <item>915.686</item>
-        <item>917.647</item>
-        <item>919.608</item>
-        <item>921.569</item>
-        <item>923.529</item>
-        <item>925.49</item>
-        <item>927.451</item>
-        <item>929.412</item>
-        <item>931.373</item>
-        <item>933.333</item>
-        <item>935.294</item>
-        <item>937.255</item>
-        <item>939.216</item>
-        <item>941.176</item>
-        <item>943.137</item>
-        <item>945.098</item>
-        <item>947.059</item>
-        <item>949.02</item>
-        <item>950.98</item>
-        <item>952.941</item>
-        <item>954.902</item>
-        <item>956.863</item>
-        <item>958.824</item>
-        <item>960.784</item>
-        <item>962.745</item>
-        <item>964.706</item>
-        <item>966.667</item>
-        <item>968.627</item>
-        <item>970.588</item>
-        <item>972.549</item>
-        <item>974.51</item>
-        <item>976.471</item>
-        <item>978.431</item>
-        <item>980.392</item>
-        <item>982.353</item>
-        <item>984.314</item>
-        <item>986.275</item>
-        <item>988.235</item>
-        <item>990.196</item>
-        <item>992.157</item>
-        <item>994.118</item>
-        <item>996.078</item>
-        <item>998.039</item>
+        <item>902</item>
+        <item>904</item>
+        <item>906</item>
+        <item>908</item>
+        <item>910</item>
+        <item>912</item>
+        <item>914</item>
+        <item>916</item>
+        <item>918</item>
+        <item>920</item>
+        <item>922</item>
+        <item>924</item>
+        <item>926</item>
+        <item>927</item>
+        <item>929</item>
+        <item>931</item>
+        <item>933</item>
+        <item>935</item>
+        <item>937</item>
+        <item>939</item>
+        <item>941</item>
+        <item>943</item>
+        <item>945</item>
+        <item>947</item>
+        <item>949</item>
+        <item>951</item>
+        <item>953</item>
+        <item>955</item>
+        <item>957</item>
+        <item>959</item>
+        <item>961</item>
+        <item>963</item>
+        <item>965</item>
+        <item>967</item>
+        <item>969</item>
+        <item>971</item>
+        <item>973</item>
+        <item>975</item>
+        <item>977</item>
+        <item>979</item>
+        <item>980</item>
+        <item>982</item>
+        <item>984</item>
+        <item>986</item>
+        <item>988</item>
+        <item>990</item>
+        <item>992</item>
+        <item>994</item>
+        <item>996</item>
+        <item>998</item>
         <item>1000</item>
-        <item>1001.961</item>
-        <item>1003.922</item>
-        <item>1005.882</item>
-        <item>1007.843</item>
-        <item>1009.804</item>
-        <item>1011.765</item>
-        <item>1013.725</item>
-        <item>1015.686</item>
-        <item>1017.647</item>
-        <item>1019.608</item>
-        <item>1021.569</item>
-        <item>1023.529</item>
-        <item>1025.49</item>
-        <item>1027.451</item>
-        <item>1029.412</item>
-        <item>1031.373</item>
-        <item>1033.333</item>
-        <item>1035.294</item>
-        <item>1037.255</item>
-        <item>1039.216</item>
-        <item>1041.176</item>
-        <item>1043.137</item>
-        <item>1045.098</item>
-        <item>1047.059</item>
-        <item>1049.02</item>
-        <item>1050.98</item>
-        <item>1052.941</item>
-        <item>1054.902</item>
-        <item>1056.863</item>
-        <item>1058.824</item>
-        <item>1060.784</item>
-        <item>1062.745</item>
-        <item>1064.706</item>
-        <item>1066.667</item>
-        <item>1068.627</item>
-        <item>1070.588</item>
-        <item>1072.549</item>
-        <item>1074.51</item>
-        <item>1076.471</item>
-        <item>1078.431</item>
-        <item>1080.392</item>
-        <item>1082.353</item>
-        <item>1084.314</item>
-        <item>1086.275</item>
-        <item>1088.235</item>
-        <item>1090.196</item>
-        <item>1092.157</item>
-        <item>1094.118</item>
-        <item>1096.078</item>
-        <item>1098.039</item>
+        <item>1002</item>
+        <item>1004</item>
+        <item>1006</item>
+        <item>1008</item>
+        <item>1010</item>
+        <item>1012</item>
+        <item>1014</item>
+        <item>1016</item>
+        <item>1018</item>
+        <item>1020</item>
+        <item>1022</item>
+        <item>1024</item>
+        <item>1025</item>
+        <item>1027</item>
+        <item>1029</item>
+        <item>1031</item>
+        <item>1033</item>
+        <item>1035</item>
+        <item>1037</item>
+        <item>1039</item>
+        <item>1041</item>
+        <item>1043</item>
+        <item>1045</item>
+        <item>1047</item>
+        <item>1049</item>
+        <item>1051</item>
+        <item>1053</item>
+        <item>1055</item>
+        <item>1057</item>
+        <item>1059</item>
+        <item>1061</item>
+        <item>1063</item>
+        <item>1065</item>
+        <item>1067</item>
+        <item>1069</item>
+        <item>1071</item>
+        <item>1073</item>
+        <item>1075</item>
+        <item>1076</item>
+        <item>1078</item>
+        <item>1080</item>
+        <item>1082</item>
+        <item>1084</item>
+        <item>1086</item>
+        <item>1088</item>
+        <item>1090</item>
+        <item>1092</item>
+        <item>1094</item>
+        <item>1096</item>
+        <item>1098</item>
         <item>1100</item>
-        <item>1101.961</item>
-        <item>1103.922</item>
-        <item>1105.882</item>
-        <item>1107.843</item>
-        <item>1109.804</item>
-        <item>1111.765</item>
-        <item>1113.725</item>
-        <item>1115.686</item>
-        <item>1117.647</item>
-        <item>1119.608</item>
-        <item>1121.569</item>
-        <item>1123.529</item>
-        <item>1125.49</item>
-        <item>1127.451</item>
-        <item>1129.412</item>
-        <item>1131.373</item>
-        <item>1133.333</item>
-        <item>1135.294</item>
-        <item>1137.255</item>
-        <item>1139.216</item>
-        <item>1141.176</item>
-        <item>1143.137</item>
-        <item>1145.098</item>
-        <item>1147.059</item>
-        <item>1149.02</item>
-        <item>1150.98</item>
-        <item>1152.941</item>
-        <item>1154.902</item>
-        <item>1156.863</item>
-        <item>1158.824</item>
-        <item>1160.784</item>
-        <item>1162.745</item>
-        <item>1164.706</item>
-        <item>1166.667</item>
-        <item>1168.627</item>
-        <item>1170.588</item>
-        <item>1172.549</item>
-        <item>1174.51</item>
-        <item>1176.471</item>
-        <item>1178.431</item>
-        <item>1180.392</item>
-        <item>1182.353</item>
-        <item>1184.314</item>
-        <item>1186.275</item>
-        <item>1188.235</item>
-        <item>1190.196</item>
-        <item>1192.157</item>
-        <item>1194.118</item>
-        <item>1196.078</item>
-        <item>1198.039</item>
+        <item>1102</item>
+        <item>1104</item>
+        <item>1106</item>
+        <item>1108</item>
+        <item>1110</item>
+        <item>1112</item>
+        <item>1114</item>
+        <item>1116</item>
+        <item>1118</item>
+        <item>1120</item>
+        <item>1122</item>
+        <item>1124</item>
+        <item>1125</item>
+        <item>1127</item>
+        <item>1129</item>
+        <item>1131</item>
+        <item>1133</item>
+        <item>1135</item>
+        <item>1137</item>
+        <item>1139</item>
+        <item>1141</item>
+        <item>1143</item>
+        <item>1145</item>
+        <item>1147</item>
+        <item>1149</item>
+        <item>1151</item>
+        <item>1153</item>
+        <item>1155</item>
+        <item>1157</item>
+        <item>1159</item>
+        <item>1161</item>
+        <item>1163</item>
+        <item>1165</item>
+        <item>1167</item>
+        <item>1169</item>
+        <item>1171</item>
+        <item>1173</item>
+        <item>1175</item>
+        <item>1176</item>
+        <item>1178</item>
+        <item>1180</item>
+        <item>1182</item>
+        <item>1184</item>
+        <item>1186</item>
+        <item>1188</item>
+        <item>1190</item>
+        <item>1192</item>
+        <item>1194</item>
+        <item>1196</item>
+        <item>1198</item>
         <item>1200</item>
+        <item>1202</item>
+        <item>1204</item>
+        <item>1206</item>
+        <item>1208</item>
+        <item>1210</item>
+        <item>1212</item>
+        <item>1214</item>
+        <item>1216</item>
+        <item>1218</item>
+        <item>1220</item>
+        <item>1222</item>
+        <item>1224</item>
+        <item>1225</item>
+        <item>1227</item>
+        <item>1229</item>
+        <item>1231</item>
+        <item>1233</item>
+        <item>1235</item>
+        <item>1237</item>
+        <item>1239</item>
+        <item>1241</item>
+        <item>1243</item>
+        <item>1245</item>
+        <item>1247</item>
+        <item>1249</item>
+        <item>1251</item>
+        <item>1253</item>
+        <item>1255</item>
+        <item>1257</item>
+        <item>1259</item>
+        <item>1261</item>
+        <item>1263</item>
+        <item>1265</item>
+        <item>1267</item>
+        <item>1269</item>
+        <item>1271</item>
+        <item>1273</item>
+        <item>1275</item>
+        <item>1276</item>
+        <item>1278</item>
+        <item>1280</item>
+        <item>1282</item>
+        <item>1284</item>
+        <item>1286</item>
+        <item>1288</item>
+        <item>1290</item>
+        <item>1292</item>
+        <item>1294</item>
+        <item>1296</item>
+        <item>1298</item>
+        <item>1300</item>
+        <item>1302</item>
+        <item>1304</item>
+        <item>1306</item>
+        <item>1308</item>
+        <item>1310</item>
+        <item>1312</item>
+        <item>1314</item>
+        <item>1316</item>
+        <item>1318</item>
+        <item>1320</item>
+        <item>1322</item>
+        <item>1324</item>
+        <item>1325</item>
+        <item>1327</item>
+        <item>1329</item>
+        <item>1331</item>
+        <item>1333</item>
+        <item>1335</item>
+        <item>1337</item>
+        <item>1339</item>
+        <item>1341</item>
+        <item>1343</item>
+        <item>1345</item>
+        <item>1347</item>
+        <item>1349</item>
+        <item>1351</item>
+        <item>1353</item>
+        <item>1355</item>
+        <item>1357</item>
+        <item>1359</item>
+        <item>1361</item>
+        <item>1363</item>
+        <item>1365</item>
+        <item>1367</item>
+        <item>1369</item>
+        <item>1371</item>
+        <item>1373</item>
+        <item>1375</item>
+        <item>1376</item>
+        <item>1378</item>
+        <item>1380</item>
+        <item>1382</item>
+        <item>1384</item>
+        <item>1386</item>
+        <item>1388</item>
+        <item>1390</item>
+        <item>1392</item>
+        <item>1394</item>
+        <item>1396</item>
+        <item>1398</item>
+        <item>1400</item>
+        <item>1402</item>
+        <item>1404</item>
+        <item>1406</item>
+        <item>1408</item>
+        <item>1410</item>
+        <item>1412</item>
+        <item>1414</item>
+        <item>1416</item>
+        <item>1418</item>
+        <item>1420</item>
+        <item>1422</item>
+        <item>1424</item>
+        <item>1425</item>
+        <item>1427</item>
+        <item>1429</item>
+        <item>1431</item>
+        <item>1433</item>
+        <item>1435</item>
+        <item>1437</item>
+        <item>1439</item>
+        <item>1441</item>
+        <item>1443</item>
+        <item>1445</item>
+        <item>1447</item>
+        <item>1449</item>
+        <item>1451</item>
+        <item>1453</item>
+        <item>1455</item>
+        <item>1457</item>
+        <item>1459</item>
+        <item>1461</item>
+        <item>1463</item>
+        <item>1465</item>
+        <item>1467</item>
+        <item>1469</item>
+        <item>1471</item>
+        <item>1473</item>
+        <item>1475</item>
+        <item>1476</item>
+        <item>1478</item>
+        <item>1480</item>
+        <item>1482</item>
+        <item>1484</item>
+        <item>1486</item>
+        <item>1488</item>
+        <item>1490</item>
+        <item>1492</item>
+        <item>1494</item>
+        <item>1496</item>
+        <item>1498</item>
+        <item>1500</item>
     </array>
 
-    <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
-    <bool name="config_supportAudioSourceUnprocessed">false</bool>
+    <!-- If true, allows rotation resolver service to help resolve screen rotation. -->
+    <bool name="config_allowRotationResolver">false</bool>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as open by the
+         device fold controller. Default is empty. -->
+    <integer-array name="config_openDeviceStates">
+        <item>2</item>
+    </integer-array>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as folded by the
+         display fold controller. -->
+    <integer-array name="config_foldedDeviceStates" translatable="false">
+      <item>0</item> <!-- CLOSED -->
+    </integer-array>
+
+    <!-- Indicates whether to enable an animation when unfolding a device or not -->
+    <bool name="config_unfoldTransitionEnabled">true</bool>
+
+    <!-- Indicates whether to enable hinge angle sensor when using unfold animation -->
+    <bool name="config_unfoldTransitionHingeAngle">true</bool>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as half-folded by
+     the display fold controller. Default is empty. -->
+    <integer-array name="config_halfFoldedDeviceStates">
+        <item>1</item>
+    </integer-array>
+
+    <!-- The device states (supplied by DeviceStateManager) that should be treated as a rear display
+     state. Default is empty. -->
+    <integer-array name="config_rearDisplayDeviceStates">
+        <item>3</item>
+    </integer-array>
+
+    <!-- Indicates whether the window manager reacts to half-fold device states by overriding
+     rotation. -->
+    <bool name="config_windowManagerHalfFoldAutoRotateOverride">true</bool>
+
+    <!-- Indicates whether the window manager pauses autorotation when folding or unfolding
+     a foldable device based on hinge angle sensor events and physical display switch events. -->
+    <bool name="config_windowManagerPauseRotationWhenUnfolding">true</bool>
+
+    <!-- Amount of time during which autorotation will be disabled since last hinge angle event -->
+    <integer name="config_pauseRotationWhenUnfolding_maxHingeAngle">165</integer>
+
+    <!-- Maximum hinge angle event to be considered to disable autorotation when folding or
+     unfolding -->
+    <integer name="config_pauseRotationWhenUnfolding_hingeEventTimeout">400</integer>
+
+    <!-- Amount of time during which autorotation will be disabled since last display switch -->
+    <integer name="config_pauseRotationWhenUnfolding_displaySwitchTimeout">1000</integer>
+
+    <!-- When a device enters any of these states, it should be woken up. States are defined in
+         device_state_configuration.xml. -->
+    <integer-array name="config_deviceStatesOnWhichToWakeUp">
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <!-- When a device enters any of these states, it should go to sleep. States are defined in
+         device_state_configuration.xml. -->
+    <integer-array name="config_deviceStatesOnWhichToSleep">
+        <item>0</item>
+    </integer-array>
+
+    <!-- Map of device posture to rotation lock setting. Each entry must be in the format
+         "key:value", or "key:value:fallback_key" for example: "0:1" or "2:0:1". The keys are one of
+         Settings.Secure.DeviceStateRotationLockKey, and the values are one of
+         Settings.Secure.DeviceStateRotationLockSetting.
+         The fallback is a key to a device posture that can be specified when the value is
+         Settings.Secure.DEVICE_STATE_ROTATION_LOCK_IGNORED.
+     -->
+    <string-array name="config_perDeviceStateRotationLockDefaults">
+        <item>0:1</item>
+        <item>1:0:2</item>
+        <item>2:2</item>
+    </string-array>
+
+    <!-- Device states where the sensor based rotation values should be reversed around the Z axis
+         for the default display.
+         TODO(b/265312193): Remove this workaround when this bug is fixed.-->
+    <integer-array name="config_deviceStatesToReverseDefaultDisplayRotationAroundZAxis">
+        <item>3</item>
+    </integer-array>
+
+    <string-array name="config_displayUniqueIdArray" translatable="false">
+        <item>"local:4630947175568309891"</item>
+        <item>"local:4630946481096930692"</item>
+    </string-array>
 
     <!-- Indicates whether the system wide captions service should also support
          call captioning.
     -->
     <bool name="config_systemCaptionsServiceCallsEnabled" translatable="false">true</bool>
-
-    <!-- Whether cbrs is supported on the device or not -->
-    <bool name="config_cbrs_supported" translatable="false">true</bool>
-
+<bool name="config_persistBrightnessNitsForDefaultDisplay">true</bool>
+<bool name="config_supportsConcurrentInternalDisplays">false</bool>
 </resources>
