@@ -1,3 +1,5 @@
+persist.fold_lock_setting_enabled=true
+
 # Fingerprint
 ro.vendor.fingerprint.type=side
 ro.vendor.fingerprint.sensor_location=540|1697|123
