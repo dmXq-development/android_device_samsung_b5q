@@ -14,7 +14,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Init
 PRODUCT_PACKAGES += \
-    init.dm1q.rc
+    init.b5q.rc
 
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -22,10 +22,10 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResDm1q \
-    LineageResDm1q \
-    SystemUIResDm1q \
-    WifiResTargetDm1q
+    FrameworksResB5q \
+    LineageResB5q \
+    SystemUIResB5q \
+    WifiResTargetB5q
 
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
@@ -37,4 +37,4 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, device/samsung/sm8550-common/common.mk)
 
 # Inherit from the proprietary files makefile.
-$(call inherit-product, vendor/samsung/dm1q/dm1q-vendor.mk)
+$(call inherit-product, vendor/samsung/b5q/b5q-vendor.mk)

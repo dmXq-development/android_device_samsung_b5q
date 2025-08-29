@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "FrameworksResDm1q",
+    name: "SystemUIResB5q",
     device_specific: true,
 }

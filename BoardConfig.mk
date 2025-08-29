@@ -6,16 +6,16 @@
 
 include device/samsung/sm8550-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/dm1q
+DEVICE_PATH := device/samsung/b5q
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := dm1q
+TARGET_OTA_ASSERT_DEVICE := b5q
 
 # Display
 TARGET_SCREEN_DENSITY := 450
 
 # Kernel
-TARGET_KERNEL_CONFIG := dm1q_defconfig
+TARGET_KERNEL_CONFIG := b5q_defconfig
 
 # Kernel Modules
 BOARD_RECOVERY_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load.recovery))

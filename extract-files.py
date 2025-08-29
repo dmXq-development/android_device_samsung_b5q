@@ -34,7 +34,7 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 module = ExtractUtilsModule(
-    'dm1q',
+    'b5q',
     'samsung',
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,

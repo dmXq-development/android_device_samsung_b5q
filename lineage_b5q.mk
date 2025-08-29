@@ -9,21 +9,21 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from the device configuration.
-$(call inherit-product, device/samsung/dm1q/device.mk)
+$(call inherit-product, device/samsung/b5q/device.mk)
 
 # Inherit from the Lineage configuration.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_dm1q
-PRODUCT_DEVICE := dm1q
+PRODUCT_NAME := lineage_b5q
+PRODUCT_DEVICE := b5q
 PRODUCT_BRAND := Samsung
-PRODUCT_MODEL := SM-S9110
+PRODUCT_MODEL := SM-F731B
 PRODUCT_MANUFACTURER := Samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="dm1qzhx-user 15 AP3A.240905.015.A2 S9110ZHS6DYF1 release-keys" \
-    BuildFingerprint=samsung/dm1qzhx/dm1q:15/AP3A.240905.015.A2/S9110ZHS6DYF1:user/release-keys \
-    DeviceProduct=dm1qzhx \
-    SystemName=dm1qzhx
+    BuildDesc="b5qxxx-user 15 AP3A.240905.015.A2 F731BXXS5EYE5 release-keys" \
+    BuildFingerprint=samsung/b5qxxx/b5q:13/TP1A.220624.014/F731BXXS5EYE5:user/release-keys \
+    DeviceProduct=b5q \
+    SystemName=b5q
