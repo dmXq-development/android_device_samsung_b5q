@@ -12,7 +12,7 @@ DEVICE_PATH := device/samsung/b5q
 TARGET_OTA_ASSERT_DEVICE := b5q
 
 # Display
-TARGET_SCREEN_DENSITY := 450
+TARGET_SCREEN_DENSITY := 480
 
 # Kernel
 TARGET_KERNEL_CONFIG := b5q_defconfig
