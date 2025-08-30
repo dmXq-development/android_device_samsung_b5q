@@ -269,6 +269,13 @@ vendor/etc/input-port-associations.xml
 vendor/etc/display/qdcm_calib_data_B5_S6E3FAC_AMF670BS03.json
 vendor/etc/display/qdcm_calib_data_B5_S6E3FC5_AMB338EH01.json
 
+# Graphics (Adreno firmware)
+vendor/firmware/a740_sqe.fw
+vendor/firmware/a740_zap.b00
+vendor/firmware/a740_zap.b01
+vendor/firmware/a740_zap.elf
+vendor/firmware/gmu_gen70200.bin
+
 # NFC
 vendor/etc/nfc/libnfc-nxp_RF.conf
 
