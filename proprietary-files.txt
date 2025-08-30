@@ -262,8 +262,10 @@ vendor/firmware/CAMERA_ICP.mbn:odm/firmware/CAMERA_ICP.mbn|06a19bbe30982cd3e3d32
 vendor/firmware/CAMERA_ICP.mdt:odm/firmware/CAMERA_ICP.mdt|2af732fb51b255efa2b22c7010972dc9eb7d3d78
 
 # Display
-vendor/firmware/ss_dsi_panel_PBA_BOOTING_FHD_DSI1.dat
+vendor/etc/devicestate/device_state_configuration.xml
+vendor/etc/displayconfig/display_layout_configuration.xml
 vendor/etc/input-port-associations.xml
+vendor/firmware/ss_dsi_panel_PBA_BOOTING_FHD_DSI1.dat
 
 # Display calibration data
 vendor/etc/display/qdcm_calib_data_B5_S6E3FAC_AMF670BS03.json
