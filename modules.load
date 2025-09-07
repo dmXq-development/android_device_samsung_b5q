@@ -51,6 +51,7 @@ adsp_factory_module.ko
 hall_ic_notifier.ko
 sensors_core.ko
 sec_panel_notifier_v2.ko
+sec_vibrator.ko
 eud.ko
 microdump_collector.ko
 qcom_ramdump.ko
@@ -201,6 +202,7 @@ tfa9878_sysfs_dlkm.ko
 tfa9878_dlkm.ko
 input_booster_lkm.ko
 pca9482_charger.ko
+max77705_vibrator.ko
 akm.ko
 hall_ic.ko
 sec_hall_dumpkey.ko
