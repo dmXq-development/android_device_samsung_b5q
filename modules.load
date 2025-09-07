@@ -1,5 +1,4 @@
 msm_sysstats.ko
-zsmalloc.ko
 twofish_generic.ko
 twofish_common.ko
 ssg.ko
@@ -97,7 +96,6 @@ msm_geni_serial.ko
 frpc-adsprpc.ko
 rdbg.ko
 lt9611uxc.ko
-zram.ko
 qseecom_proxy.ko
 hdmi_input_mux.ko
 sec_ap_pmic.ko

@@ -1,7 +1,6 @@
 gh_arm_drv.ko
 sched-walt.ko
 msm_sysstats.ko
-zsmalloc.ko
 twofish_generic.ko
 twofish_common.ko
 ssg.ko
@@ -132,7 +131,6 @@ qcom_iommu_util.ko
 iommu-logger.ko
 lt9611uxc.ko
 regmap-spmi.ko
-zram.ko
 qseecom_proxy.ko
 hdmi_input_mux.ko
 qcom-spmi-pmic.ko
