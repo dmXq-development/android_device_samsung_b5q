@@ -24,6 +24,7 @@ vendor/firmware/cs40l26-wt3.bin
 vendor/firmware/cs40l26.bin
 vendor/firmware/cs40l26.wmfw
 vendor/firmware/dax_param.bin
+vendor/firmware/tfa98xx.cnt
 
 # Audio FX modules
 vendor/lib64/lib_SamsungRec_07020.so

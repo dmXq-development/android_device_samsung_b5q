@@ -199,6 +199,8 @@ synaptics_ts_spi.ko
 synaptics_ts_i2c.ko
 fingerprint.ko
 fingerprint_sysfs.ko
+tfa9878_sysfs_dlkm.ko
+tfa9878_dlkm.ko
 input_booster_lkm.ko
 pca9482_charger.ko
 akm.ko
