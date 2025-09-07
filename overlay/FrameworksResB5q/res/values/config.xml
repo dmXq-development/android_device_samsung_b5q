@@ -1768,8 +1768,8 @@
     </integer-array>
 
     <string-array name="config_displayUniqueIdArray" translatable="false">
-        <item>"local:4630947175568309891"</item>
-        <item>"local:4630946481096930692"</item>
+        <item>"local:4630947181303254916"</item>
+        <item>"local:4630946592180194435"</item>
     </string-array>
 
     <!-- Indicates whether the system wide captions service should also support
