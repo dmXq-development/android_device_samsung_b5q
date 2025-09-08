@@ -14,8 +14,10 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Displayconfig
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/display/device_state_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/devicestate/device_state_configuration.xml \
     $(LOCAL_PATH)/config/display/display_id_4630946592180194435.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946592180194435.xml \
-    $(LOCAL_PATH)/config/display/display_id_4630947181303254916.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947181303254916.xml
+    $(LOCAL_PATH)/config/display/display_id_4630947181303254916.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630947181303254916.xml \
+    $(LOCAL_PATH)/config/display/display_layout_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_layout_configuration.xml
 
 # Init
 PRODUCT_PACKAGES += \
