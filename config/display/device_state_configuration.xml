@@ -18,7 +18,10 @@
   <!-- CLOSE configuration -->
   <device-state>
     <identifier>0</identifier>
-    <name>CLOSE</name>
+    <name>CLOSED</name>
+    <flags>
+      <flag>FLAG_CANCEL_OVERRIDE_REQUESTS</flag>
+    </flags>
     <conditions>
       <lid-switch>
         <open>FALSE</open>
@@ -33,10 +36,10 @@
     </conditions>
   </device-state>
 
-  <!-- TENT configuration -->
+  <!-- HALF_FOLD configuration -->
   <device-state>
     <identifier>1</identifier>
-    <name>TENT</name>
+    <name>HALF_OPENED</name>
     <conditions>
       <lid-switch>
         <open>TRUE</open>
@@ -45,8 +48,8 @@
         <type>com.samsung.sensor.folding_state</type>
         <name>lid_angle_fusion  Wakeup</name>
         <value>
-          <min-inclusive>1</min-inclusive>
-          <max-inclusive>1.9</max-inclusive>
+          <min-inclusive>2</min-inclusive>
+          <max-inclusive>2.9</max-inclusive>
         </value>
       </sensor>
     </conditions>
@@ -55,7 +58,7 @@
   <!-- OPEN configuration -->
   <device-state>
     <identifier>2</identifier>
-    <name>OPEN</name>
+    <name>OPENED</name>
     <conditions>
       <lid-switch>
         <open>TRUE</open>
@@ -73,10 +76,9 @@
   <!-- DUAL configuration -->
   <device-state>
     <identifier>3</identifier>
-    <name>DUAL</name>
+    <name>REAR_DISPLAY_STATE</name>
     <flags>
       <flag>FLAG_EMULATED_ONLY</flag>
-      <flag>FLAG_CANCEL_WHEN_REQUESTER_NOT_ON_TOP</flag>
     </flags>
   </device-state>
 </device-state-config>
