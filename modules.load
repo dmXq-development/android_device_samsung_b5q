@@ -161,6 +161,7 @@ sdhci-msm-sec.ko
 leds-gpio.ko
 leds-qti-flash.ko
 leds-qti-tri-led.ko
+leds-qpnp-vibrator-ldo.ko
 memlat_vendor.ko
 cpufreq_stats_vendor.ko
 ep_pcie_drv.ko
