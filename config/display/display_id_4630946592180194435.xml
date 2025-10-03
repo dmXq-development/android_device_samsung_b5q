@@ -19,7 +19,7 @@
         <density>
             <width>1080</width>
             <height>2640</height>
-            <density>420</density>
+            <density>480</density>
         </density>
     </densityMapping>
 </displayConfiguration>
